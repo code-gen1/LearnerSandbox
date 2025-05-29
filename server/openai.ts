@@ -72,7 +72,7 @@ Focus on:
 - Constructive feedback that helps learning`;
 
     const response = await openai.chat.completions.create({
-      model: "gpt-4o",
+      model: "deepseek/deepseek-chat-v3-0324:free",
       messages: [
         {
           role: "system",
@@ -143,7 +143,7 @@ Ensure the exercise is:
 - Provides helpful hints for students`;
 
     const response = await openai.chat.completions.create({
-      model: "gpt-4o",
+      model: "deepseek/deepseek-chat-v3-0324:free",
       messages: [
         {
           role: "system",
@@ -206,7 +206,7 @@ Keep responses concise but informative. Always encourage the student to think th
     ];
 
     const response = await openai.chat.completions.create({
-      model: "gpt-4o",
+      model: "deepseek/deepseek-chat-v3-0324:free",
       messages: messages as any,
       temperature: 0.6,
       max_tokens: 500,
