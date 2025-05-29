@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "wouter";
+import { useLocation } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -21,7 +21,7 @@ import { useQuery } from "@tanstack/react-query";
 import type { Module, Task, UserProgress, AiInteraction } from "@shared/schema";
 
 export default function Admin() {
-  const [, navigate] = useNavigate();
+  const [, setLocation] = useLocation();
   const [isConfigOpen, setIsConfigOpen] = useState(false);
 
   const { data: modules = [] } = useQuery<Module[]>({
@@ -77,7 +77,7 @@ export default function Admin() {
             <div className="flex items-center space-x-4">
               <Button
                 variant="ghost"
-                onClick={() => navigate("/")}
+                onClick={() => setLocation("/")}
                 className="flex items-center space-x-2"
               >
                 <ArrowLeft className="w-4 h-4" />

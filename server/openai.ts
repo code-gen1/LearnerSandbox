@@ -2,7 +2,8 @@ import OpenAI from "openai";
 
 // the newest OpenAI model is "gpt-4o" which was released May 13, 2024. do not change this unless explicitly requested by the user
 const openai = new OpenAI({ 
-  apiKey: process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY_ENV_VAR || "default_key"
+  apiKey: process.env.OPENAI_API_KEY || "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",
+  baseURL: "https://openrouter.ai/api/v1"
 });
 
 export interface CodeEvaluationResult {
